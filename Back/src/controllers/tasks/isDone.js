@@ -1,0 +1,33 @@
+const { Task } =require("../../db")
+
+const isDone = async (req, res) => {
+    try {
+        const { id } = req.params
+
+        const {
+          text,
+          done
+        } = await Task.findByPk(id)
+
+        console.log(done)
+
+        await Task.update(
+          {
+            text,
+            done: !done
+          }, {
+            where: {
+              id: id
+            }
+          }
+        )
+        return res.status(200).send("The task was succefully marked as done")
+
+    } catch (error) {
+        res.status(404).send({error:error.message})
+    }
+}
+
+module.exports = {
+    isDone
+}
