@@ -1,18 +1,21 @@
 import './App.css'
 import List from './components/List/List'
 import Input from './components/Input/Input'
-import styles from './App.css'
+import Donelist from './components/DoneList/doneList'
 
 function App() {
 
   return (
-    <div className={styles.mainDiv}>
+    <div>
       <h1>To Do List</h1>
       <div>
         <Input/>
       </div>
       <div>
         <List/>
+      </div>
+      <div>
+        <Donelist/>
       </div>
     </div>
   )
