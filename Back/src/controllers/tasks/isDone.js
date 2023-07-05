@@ -9,8 +9,6 @@ const isDone = async (req, res) => {
           done
         } = await Task.findByPk(id)
 
-        console.log(done)
-
         await Task.update(
           {
             text,

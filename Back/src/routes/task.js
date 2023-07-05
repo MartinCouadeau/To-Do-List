@@ -3,18 +3,21 @@ const {
     createTask,
     getTask,
     getDone,
-    isDone
+    isDone,
+    editTask,
+    deleteTask
 } = require("../controllers/index")
 
 
 const router = Router();
 
 
-
-router.get("/", getTask)
 router.post("/",createTask)
-router.put("/:id", isDone)
+router.get("/", getTask)
 router.get("/done", getDone)
+router.put("/:id", isDone)
+router.put("/:id", editTask)
+router.delete("/:id", deleteTask)
 
 
 
