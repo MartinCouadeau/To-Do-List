@@ -10,15 +10,6 @@ const editTask = async (req, res) => {
         } = req.body
 
 
-        await Task.destroy(
-          {
-            where: {
-              id: id
-            }
-          }
-        )
-
-
         await Task.update(
           {
             text,
