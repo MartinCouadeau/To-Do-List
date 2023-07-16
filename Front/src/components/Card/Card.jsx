@@ -1,10 +1,14 @@
-export default function Card () {
+export default function Card ({
+   id,
+   text
+   }) {
 
 
   return (
       <div >
          <div><h1>Card</h1></div>
          <div>
+            <h2>{text}</h2>
             <button onClick={console.log("crea logica edit")}>Edit</button>
             <button onClick={console.log("crea logica Done")}>Done</button>
             <button onClick={console.log("crea logica delete")}>Delete</button>

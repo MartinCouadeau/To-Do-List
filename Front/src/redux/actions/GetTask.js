@@ -5,10 +5,11 @@ import axios from "axios"
 
 export function getTask(task) {
     return async function(dispatch) {
-        await axios.get("http://localhost:3001/task", task)
+        const json = await axios.get("http://localhost:3001/task")
+        console.log(json)
         return dispatch({
             type: GET_TASK,
-            payload: task
+            payload: json.data
         })
     }
 }

@@ -5,6 +5,7 @@ export default function List () {
 
   return (
       <div className={style.MainDiv}>
+        <h1>Tasks</h1>
           <Card/>
       </div>
   )

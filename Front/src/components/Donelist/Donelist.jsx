@@ -5,6 +5,7 @@ export default function Donelist () {
 
   return (
       <div className={style.MainDiv}>
+        <h1>Done</h1>
           <Card/>
       </div>
   )
