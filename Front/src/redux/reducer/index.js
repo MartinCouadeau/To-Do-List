@@ -37,14 +37,14 @@ export default function rootReducer(state=initialState, action) {
     case IS_DONE:
       return {
         ...state,
-        tasks: state.tasks.map(task => task.id === action.payload.id ? task = action.payload.payload : task),
-        allTasks: state.allTasks.map(task => task.id === action.payload.id ? task = action.payload.payload : task)
+        tasks: state.tasks.map(task => task.id === action.payload.id ? action.payload.payload : task),
+        allTasks: state.allTasks.map(task => task.id === action.payload.id ? action.payload.payload : task)
       }
     case EDIT_TASK:
       return {
         ...state,
-        tasks: state.tasks.map(task => task.id === action.payload.id ? task = action.payload.payload : task),
-        allTasks: state.allTasks.map(task => task.id === action.payload.id ? task = action.payload.payload : task)
+        tasks: state.tasks.map(task => task.id === action.payload.id ? action.payload.payload : task),
+        allTasks: state.allTasks.map(task => task.id === action.payload.id ? action.payload.payload : task)
       }
     case DELETE_TASK:
       return {
@@ -52,5 +52,7 @@ export default function rootReducer(state=initialState, action) {
         tasks: state.tasks.filter(task => task.id !== action.payload),
         allTasks: state.allTasks.filter(task => task.id !== action.payload)
       }
+    default:
+      return state;
   }
 }

@@ -4,11 +4,12 @@ const  { Task } = require("../../db")
 const createTask = async (req, res) => {
   try {
       const {
-        text
+        text,
+        done
       } = req.body
-      console.log(text)
       const newTask = await Task.create({
-        text
+        text,
+        done
       })
 
       res.status(200).send(newTask)
