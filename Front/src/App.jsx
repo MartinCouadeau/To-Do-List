@@ -12,7 +12,7 @@ export default function App() {
   
   const dispatch = useDispatch()
   const [isLoading, setIsLoading] = useState(true);
-  const tasks = useSelector((state) => state.allTasks)
+  const tasks = useSelector((state) => state.tasks)
   const tasksDone = useSelector((state) => state.done)
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function App() {
     dispatch(getDone())
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1000);
   },[dispatch])
 
   if (isLoading) {
@@ -35,10 +35,10 @@ export default function App() {
         <Input/>
       </div>
       <div>
-        <List/>
+        <List tasks = {tasks}/>
       </div>
       <div>
-        <Donelist/>
+        <Donelist tasks = {tasksDone}/>
       </div>
     </div>
   )

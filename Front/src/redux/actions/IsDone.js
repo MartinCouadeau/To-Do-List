@@ -3,12 +3,12 @@ import axios from "axios"
 
 
 
-export function isDone(task,id) {
+export function isDone(id) {
     return async function(dispatch) {
-        await axios.put(`http://localhost:3001/task/${id}`, task)
+        const json = await axios.put(`http://localhost:3001/task/${id}`)
         return dispatch({
             type: IS_DONE,
-            payload: task
+            payload: json
         })
     }
 }
