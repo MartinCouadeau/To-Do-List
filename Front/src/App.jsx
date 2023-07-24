@@ -1,7 +1,7 @@
 import './App.css'
 import List from './components/List/List'
 import Input from './components/Input/Input'
-import Donelist from './components/DoneList/doneList'
+import Donelist from './components/Donelist/Donelist'
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from 'react';
 import { getTask } from './redux/actions/GetTask'
@@ -20,7 +20,7 @@ export default function App() {
     dispatch(getDone())
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 500);
   },[dispatch])
 
   if (isLoading) {

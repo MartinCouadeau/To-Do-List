@@ -19,7 +19,11 @@ const isDone = async (req, res) => {
             }
           }
         )
-        return res.status(200).send("The task was succefully marked as done")
+        return res.status(200).send({
+          id,
+          text,
+          done: !done
+        })
 
     } catch (error) {
         res.status(404).send({error:error.message})

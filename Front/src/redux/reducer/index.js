@@ -20,7 +20,7 @@ export default function rootReducer(state=initialState, action) {
     case CREATE_TASK:
       return {
         ...state,
-        tasks: [...state.tasks, action.payload]
+        tasks: [...state.tasks, action.payload.data]
       }
     case GET_TASK:
       return {
@@ -33,11 +33,20 @@ export default function rootReducer(state=initialState, action) {
         done: action.payload
       }
     case IS_DONE:
-      return {
-        ...state,
-        tasks: state.tasks.filter(task => task.id !== action.payload.id),
-        done:[...state.done, {...action.payload}]
+      if (action.payload.data.done) {
+        return {
+          ...state,
+          tasks: state.tasks.filter(task => task.id !== action.payload.data.id),
+          done:[...state.done, action.payload.data]
+        }
+      } else {
+        return {
+          ...state,
+          done: state.done.filter(task => task?.id !== action.payload.data?.id),
+          tasks:[...state.tasks, action.payload.data]
+        }
       }
+      
     case EDIT_TASK:
       return {
         ...state,
@@ -47,6 +56,7 @@ export default function rootReducer(state=initialState, action) {
       return {
         ...state,
         tasks: state.tasks.filter(task => task.id !== action.payload),
+        done: state.done.filter(task => task.id !== action.payload),
       }
     default:
       return state;

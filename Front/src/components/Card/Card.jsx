@@ -14,15 +14,12 @@ export default function Card ({
    function handleDone (event) {
       event.preventDefault();
       dispatch(isDone(id))
-      window.location.reload() 
    }
 
 
    function handleDelete (event) {
       event.preventDefault();
       dispatch(deleteTask(id))
-      alert("Task successfully deleted")
-      window.location.reload() 
    }
 
 

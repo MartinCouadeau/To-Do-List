@@ -6,7 +6,7 @@ export default function List ({tasks}) {
   return (
       <div className={style.MainDiv}>
         <h1>To Do</h1>
-        {tasks.length > 0 ? tasks?.map((task) => {
+        {tasks.length > 0 ? tasks?.map((task, index) => {
           return (
             <Card
               key={task.id ? task.id : index}

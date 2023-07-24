@@ -21,7 +21,7 @@ export default function Input () {
 
   function handleClick () {
     dispatch(createTask(task))
-    window.location.reload()
+    setTask({ text: '' })
   }
 
 
@@ -31,12 +31,9 @@ export default function Input () {
             onChange={handleChange}
             type="text" 
             placeholder="Enter task"
+            value={task.text}
           />
-          <button onClick={() => {
-            handleClick()
-            const inp = document.querySelector("input")
-            inp.value = ""
-          }}>Create</button>
+          <button onClick={handleClick}>Create</button>
       </div>
   )
 }
