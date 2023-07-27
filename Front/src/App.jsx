@@ -29,15 +29,15 @@ export default function App() {
 
 
   return (
-    <div>
-      <h1>To Do List</h1>
-      <div>
+    <div id='MainDiv'>
+      <div id='Tittle'>
+        <h1>To-Do List</h1>
         <Input/>
       </div>
-      <div>
+      <div id='task-list'>
         <List tasks = {tasks}/>
       </div>
-      <div>
+      <div id='done-list'>
         <Donelist tasks = {tasksDone}/>
       </div>
     </div>

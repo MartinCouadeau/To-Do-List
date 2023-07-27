@@ -1,6 +1,7 @@
 import { deleteTask } from "../../redux/actions/DeleteTask"
 import { isDone } from "../../redux/actions/IsDone"
 import { useDispatch } from "react-redux"
+import style from "./Card.module.css"
 
 export default function Card ({
    id,
@@ -25,10 +26,10 @@ export default function Card ({
 
   return (
       <div >
-         <div>
-            <h3>{text}</h3>
-            <button onClick={handleDone}>Done</button>
-            <button onClick={handleDelete}>Delete</button>
+         <div className={style.MainDiv}>
+            <h3 className={style.text}>{text}</h3>
+            <button className={style.btnDone} onClick={handleDone}><i className="fas fa-check"></i></button>
+            <button className={style.btnDelete}onClick={handleDelete}><i className="fas fa-trash"></i></button>
          </div>
       </div>
   )

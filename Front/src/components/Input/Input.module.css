@@ -1,3 +1,33 @@
 .MainDiv {
-  background-color:seagreen;
+  display: flex; /* Alinea los elementos horizontalmente */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+.Enterbutton {
+  /* Estilos del botón */
+  border: none;
+  padding: 4px 15px;
+  border-radius: 8px;
+  color: #04A1BF;
+  background-color: #025F70;
+  transition: all 0.75s ease;
+  -webkit-transition: all 0.75s ease;
+  -moz-transition: all 0.75s ease;
+  -ms-transition: all 0.75s ease;
+  -o-transition: all 0.75 ease;
+  font-weight: normal;
+}
+
+.Enterbutton:hover {
+  background-color: #02798F;
+  color: #FFCD5D;
+}
+
+.input {
+  /* Estilos del input */
+  border: 2px solid #04A1BF;
+  border-radius: 8px;
+  flex: 1; /* Utiliza el espacio restante disponible en el contenedor */
+  padding: 6px 8px; /* Ajusta el padding para que el contenido esté centrado verticalmente */
+  margin-right: 5px; /* Agrega un margen derecho para separar el botón */
 }

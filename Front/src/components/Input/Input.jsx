@@ -20,20 +20,24 @@ export default function Input () {
   }
 
   function handleClick () {
-    dispatch(createTask(task))
-    setTask({ text: '' })
+    if (task.text.length > 0) {
+      dispatch(createTask(task))
+      setTask({ text: '' })
+    }
   }
 
 
   return (
       <div className={style.MainDiv}>
           <input
+            className={style.input}
             onChange={handleChange}
             type="text" 
-            placeholder="Enter task"
+            placeholder="Enter new task..."
             value={task.text}
+            maxLength={70}
           />
-          <button onClick={handleClick}>Create</button>
+          <button className={style.Enterbutton} onClick={handleClick}><i className="fas fa-pencil-alt"></i></button>
       </div>
   )
 }

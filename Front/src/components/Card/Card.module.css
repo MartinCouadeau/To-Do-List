@@ -1,0 +1,48 @@
+.MainDiv {
+  list-style: none;
+  padding: 1px 20px;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-weight: 600;
+  border: 2px solid #025f70;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background: #4EB9CD;
+  width: 900px;
+  display: flex;
+  align-items: center;
+  transition: all 0.75s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5 ease;
+}
+
+.MainDiv:hover {
+  background: #2c4d54;
+}
+
+.MainDiv h3 {
+  overflow-wrap: break-word;
+  flex-grow: 1;
+}
+
+.MainDiv button:last-child {
+  margin-left: auto;
+}
+
+.btnDone {
+  margin-right: 10px;
+}
+
+.btnDone:hover {
+  background: #04A1BF;
+}
+
+.btnDelete {
+  margin-right: 10px;
+}
+
+.btnDelete:hover {
+  background: #04A1BF;
+}

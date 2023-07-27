@@ -2,6 +2,30 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
-  background-color: cadetblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+#MainDiv {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px; /* Centra el MainDiv verticalmente */
+}
+
+#Tittle {
+  margin-bottom: 20px; /* Agrega un margen inferior para separar el título de la lista de tareas */
+}
+
+
+#task-list {
+  margin-top: 50px; /* Puedes ajustar este valor según tu preferencia */
+}
+
+#done-list {
+  margin-top: 50px; /* Puedes ajustar este valor según tu preferencia */
 }
